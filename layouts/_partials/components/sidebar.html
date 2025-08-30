@@ -1,0 +1,33 @@
+{{ $parent := .CurrentSection.Parent }}
+{{ $current := .CurrentSection }}
+{{ $others := where $parent.Sections "File.Path" "ne" $current.File.Path }}
+{{ $sections := union (slice $current) $others }}
+<aside class="sidebar">
+  <details open>
+    <summary>{{ .CurrentSection.Parent.Title }}</summary>
+    <ol>
+      {{ range $sections }}
+        <li>
+          {{ if eq .File.Path $.CurrentSection.File.Path }}
+            <details open>
+              <summary>{{ .Title }}</summary>
+              <ul>
+                {{ range .Pages.ByWeight }}
+                  <li>
+                    <a href="{{ .RelPermalink }}" {{ if eq .Permalink $.Permalink }}class="current" aria-current="page"{{ end }}>
+                      {{ .Title }}
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
+            </details>
+          {{ else }}
+            <details>
+              <summary>{{ .Title }}</summary>
+            </details>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  </details>
+</aside>
