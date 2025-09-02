@@ -10,7 +10,10 @@
             <li class="page-tool"><a class="button" href="https://github.com" target="_blank" rel="external">{{ i18n "edit" }}</a></li>
           </ul>
         </div>
-        <div class="content-body">{{ .Content }}</div>
+        <div class="content-body">
+          {{ partial "components/infoboxes-tabbed.html" . }}
+          {{ .Content }}
+        </div>
       </article>
     </main>
   </div>

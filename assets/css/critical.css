@@ -243,7 +243,7 @@ button, .button {
   align-items: center;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .content .page-tools {
@@ -376,16 +376,6 @@ button, .button {
   gap: 1rem;
 }
 
-/* Very common classes */
-.infobox {
-  font-size: var(--fs);
-  margin-bottom: 1rem;
-}
-
-.infobox .infobox-title {
-  font-size: var(--fxl);
-}
-
 /* ====================================================================================================
  * Tablet
  * ==================================================================================================== */
@@ -487,13 +477,8 @@ button, .button {
   }
 
   /* Shift infobox */
-  .infobox {
+  .infobox-container {
     float: right;
     margin-left: 1rem;
-  }
-
-  .infobox .infobox-title {
-    padding: 0 0.5rem;
-    text-align: center;
   }
 }

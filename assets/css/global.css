@@ -30,7 +30,6 @@ html[data-theme="light"] {
   --border2: #d7d7d9;
 
   --accent: #8d240c;
-  --accent-darken: color-mix(in srgb, var(--accent), black 60%);
   --progressive: royalblue;
   --destructive: firebrick;
 
@@ -42,7 +41,7 @@ html[data-theme="light"] {
   --hr: #555;
   --shadow: #000;
   --tx-highlight: var(--bg0);
-  --bg-highlight: var(--accent-darken);
+  --bg-highlight: var(--accent);
 
   /* Main components */
   --navigation-bg: var(--bg2);
@@ -75,7 +74,6 @@ html[data-theme="dark"] {
   --border2: #3d3d3f;
 
   --accent: #f2e5a7;
-  --accent-darken: color-mix(in srgb, var(--accent), black 60%);
   --progressive: royalblue;
   --destructive: firebrick;
 
@@ -133,10 +131,6 @@ body {
 }
 
 /* Sidebar */
-.sidebar summary {
-  cursor: pointer;
-}
-
 .sidebar a {
   color: var(--tx2);
 }
@@ -144,7 +138,6 @@ body {
 .sidebar a.current {
   color: var(--tx-highlight);
   background: var(--bg-highlight);
-  box-shadow: 2px 2px 0 0 var(--accent-darken);
 }
 
 /* TOC */
@@ -317,10 +310,6 @@ table tr {
   border-color: var(--border1);
 }
 
-table tr:hover {
-  background-color: var(--bg2);
-}
-
 /* Accessories */
 hr {
   border-color: var(--hr);
@@ -355,6 +344,10 @@ details {
   gap: 0.5rem;
 }
 
+details[open] {
+  margin-bottom: 0.5rem;
+}
+
 details > summary {
   display: flex;
   justify-content: space-between;
@@ -365,6 +358,7 @@ details > summary {
   border-radius: var(--border-radius);
   list-style: none;
   user-select: none;
+  cursor: pointer;
 }
 
 details > summary::after {
@@ -381,16 +375,16 @@ details > summary:hover {
   background: var(--bg-hover);
 }
 
+details[open] > summary {
+  color: var(--tx0);
+  background: var(--bg-active);
+}
+
 details ol,
 details ul {
   border-left: 1px dashed var(--border1);
   margin-left: 0.75rem;
-  padding-left: 0.75rem;
-}
-
-details[open] > summary {
-  color: var(--tx0);
-  background: var(--bg-active);
+  padding: 0.25rem 0.75rem;
 }
 
 /* Overlays and modals */
