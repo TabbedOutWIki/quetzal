@@ -1,13 +1,14 @@
-{{- $videoID := (.Get 0 | htmlEscape | safeURL) -}}
+{{- $videoID := .Get "id" | htmlEscape | safeURL -}}
+{{- $startTime := .Get "start" -}}
 {{- $validID := findRE "^[\\w-]{11}$" $videoID -}}
 {{- if gt (len $validID) 0 -}}
 <a
-  href="https://youtu.be/{{ $videoID }}"
+  href="https://youtu.be/{{ $videoID }}{{ with $startTime }}&t={{ . }}{{ end }}"
   rel="noopener noreferrer"
   target="_blank"
   class="yt-thumbnail"
 >
-  <img 
+  <img
     src="https://img.youtube.com/vi/{{ $videoID }}/hqdefault.jpg"
     alt="YouTube video thumbnail"
     loading="lazy"
