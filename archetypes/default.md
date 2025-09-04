@@ -1,18 +1,40 @@
 ---
-# Use english name
-translationKey: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+# English name in lowercase
+translationKey: '{{ lower .File.ContentBaseName }}'
 
-# Web page title and Google/Discord embed description
-title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+# ========================================================
+# Search engine / page tab title
+title: '{{ title .File.ContentBaseName }}'
+
+# Search engine description (1 - 2 sentences)
 description:
 
-# Content
+# ========================================================
+# Page content - Uncomment tabs only if using multiple infoboxes
 infoboxes:
+  - title: '{{ title .File.ContentBaseName }}'
+    #tab: ''
+    data:
+      - label: ''
+        value: 
+      - label: ''
+        value: 
 
-# Meta
+# ========================================================
+# Content organization - Useful values for page sorting
+# Imagine ways that you'd want to sort/filter things in the game
 categories:
 tags:
 
+# Generic example
+# categories:
+# - Boss drops
+# - Projectile weapons
+# tags
+# - Fire
+# - Physical
+
+# ========================================================
 # Configuration - defaults to false if left commented
 # renderMath: true
 ---
