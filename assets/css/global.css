@@ -310,6 +310,31 @@ table tr {
   border-color: var(--border1);
 }
 
+/* Tooltips */
+.tooltip {
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: initial;
+    cursor: help;
+}
+
+.tooltip:hover, .tooltip:active {
+	border-bottom-style: solid;
+}
+
+.tooltip-display {
+    font-size: 0.8rem;
+    color: var(--tx0);
+    background-color: var(--bg0);
+    border: 1px solid var(--border1);
+    padding: 0.5rem 1rem;
+    max-width: 30rem;
+    text-align: unset;
+    box-shadow: 0 0 3px var(--shadow);
+}
+
+
 /* Accessories */
 hr {
   border-color: var(--hr);
