@@ -93,6 +93,7 @@ code {
   overflow-x: auto;
   padding: 0.25rem;
   width: 100%;
+  tab-size: 4;
 }
 
 kbd {
