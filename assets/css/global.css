@@ -432,6 +432,23 @@ details ul {
 .modal {
 }
 
+/* RSS Feeds and similar */
+.feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed .feed-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.feed .feed-item:nth-child(2n + 1) {
+  background: var(--bg2);
+  border-radius: 4px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   details::details-content {
     height: 0;

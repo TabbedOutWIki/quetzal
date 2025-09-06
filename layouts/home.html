@@ -21,22 +21,8 @@
             {{ end }}
           </div>
         </section>
-        <section class="recent-changes">
-          <h2>Recent changes</h2>
-          <ul class="feed">
-            <li class="feed-item">
-              <a href="">Created '/en/meta/official-wikis'</a>
-              <span>a day ago</span>
-            </li>
-            <li class="feed-item">
-              <a href="">Updated '/en/meta/plans'</a>
-              <span>2 days ago</span>
-            </li>
-            <li class="feed-item">
-              <a href="">Created '/en/shortcode/alert'</a>
-              <span>2 days ago</span>
-            </li>
-          </ul>
+        <section>
+          {{ partial "components/recent-changes.html" . }}
         </section>
         <section class="featured-contributors"></section>
       </div>
@@ -89,22 +75,6 @@
     width: 100%;
     padding-left: 5px;
     background: linear-gradient(to right, #000 35%, transparent);
-  }
-
-  .feed {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .feed .feed-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-  }
-
-  .feed .feed-item:nth-child(2n + 1) {
-    background: var(--bg2);
-    border-radius: 4px;
   }
 </style>
 {{ end }}
