@@ -1,18 +1,5 @@
 <div class="top-nav">
-  <nav aria-label="Breadcrumb">
-    <ol class="breadcrumb-list" aria-label="Breadcrumbs">
-        {{- range .Ancestors.Reverse }}
-          <li class="breadcrumb-item">
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            <!--<meta itemprop="position" content="">-->
-          </li>
-        {{- end }}
-        <li class="breadcrumb-item">
-          <a class="current" aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-          <!--<meta itemprop="position" content="">-->
-        </li>
-    </ol>
-  </nav>
+  <div class="nav-logo"><a href="{{ site.Home.Permalink }}"><img width="100" height="24" src="/logo.svg" alt=""></a></div>
   <div class="site-actions">
     <button class="button frameless site-action-toggle" type="button" aria-label="{{ i18n "nav_page_actions" }}">
       <span class="button-wrapper">

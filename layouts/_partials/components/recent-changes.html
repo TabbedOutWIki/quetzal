@@ -1,6 +1,6 @@
 {{ with .GitInfo }}
 <div class="recent-changes">
-  <h2>Recent changes</h2>
+  <h2>{{ i18n "recent_changes" }}</h2>
   <ul class="feed">
     {{ range .Ancestors | first 5 }} 
       <li class="feed-item">

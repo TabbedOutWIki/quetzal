@@ -6,7 +6,10 @@
         <section class="hero">
           <div class="logo"><kbd>Tabbed</kbd> <kbd>Out</kbd></div>
           <p>{{ i18n "home_intro" }}</p>
-          {{ partialCached "components/autofocus-search.html" . }}
+          <form id="SearchForm" class="main-search-container" action="/search" role="search">
+            <label class="sr-only" for="SearchInput">{{ i18n "ui_search" }}</label>
+            <input id="SearchInput" class="main-search-bar" type="search" name="q" placeholder="{{ i18n "ui_search_main_placeholder"}}" value="" autocomplete="off" autofocus>
+          </form>
           <div class="social-links"></div>
         </section>
         <section class="important-sections">
@@ -30,51 +33,61 @@
   </div>
 </div>
 <style>
-  .homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: clip;
-    overflow-y: visible;
-    position: relative;
-    width: 100%;
-  }
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: clip;
+  overflow-y: visible;
+  position: relative;
+  width: 100%;
+}
 
-  .homepage section {
-    display: flex;
-    flex-direction: column;
-    max-width: 900px;
-    width: 100%;
-    padding: 1rem var(--gutter);
-  }
+.homepage section {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  width: 100%;
+  padding: 1rem var(--gutter);
+}
 
-  .hero {
-    align-items: center;
-    text-align: center;
-  }
+.hero {
+  align-items: center;
+  text-align: center;
+}
 
-  .tile-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 2rem;
-  }
+.tile-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 2rem;
+}
 
-  .tile-container .img-tile {
-    position: relative;
-    outline: 1px solid #000;
-  }
+.tile-container .img-tile {
+  position: relative;
+  outline: 1px solid #000;
+}
 
-  .img-tile-text {
-    color: #fff;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 5px;
-    background: linear-gradient(to right, #000 35%, transparent);
-  }
+.img-tile-text {
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 5px;
+  background: linear-gradient(to right, #000 35%, transparent);
+}
+
+.main-search-container {
+  width: 100%;
+}
+
+.main-search-container .main-search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem 1.5rem;
+}
 </style>
 {{ end }}

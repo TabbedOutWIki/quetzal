@@ -10,11 +10,7 @@
           </ul>
         </div>
         <div class="content-body">
-          <div>
-            <h1>404 — {{ $.Site.Params.missingContentMessage | default "This page does not exist."}}</h1>
-            <p>Should it? Consider writing it!</p>
-            <p><a href="{{ "/" | absURL }}">{{ $.Site.Params.missingBackButtonLabel | default "Home page" }}&nbsp;→</a></p>
-          </div>
+          <p>{{ i18n "404" }}</p>
         </div>
       </article>
     </main>

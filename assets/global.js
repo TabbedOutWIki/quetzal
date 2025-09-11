@@ -1,13 +1,21 @@
-// Initial theme detection is set in <head> to prevent color flash
 (function() {
-  const THEME_KEY = 'WIKI_THEME'
+  const THEME_KEY = 'theme'
   const select = document.querySelector('select#theme-switcher.menu');
 
+  const isValidTheme = (theme) => {
+    switch (theme) {
+      case 'light dark':
+      case 'light':
+      case 'dark':
+        return true;
+    }
+    return false;
+  }
+
   const setOption = () => {
-    const theme = localStorage.getItem(THEME_KEY);
+    const theme = localStorage.getItem(THEME_KEY) || 'light dark';
     if (isValidTheme(theme)) {
-      const options = select.options;
-      for (const option of options) {
+      for (const option of select.options) {
         if (option.value === theme) option.selected = true;
       }
     }
@@ -18,11 +26,7 @@
     const theme = selectedOption.value;
 
     if (isValidTheme(theme)) {
-      if (theme !== 'system') {
-        document.documentElement.dataset.theme = theme;
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
+      document.documentElement.dataset.theme = theme;
       localStorage.setItem(THEME_KEY, theme);
     }
   }
