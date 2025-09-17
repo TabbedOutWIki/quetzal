@@ -5,7 +5,7 @@
 {{ partialCached "head/favicon.html" . }}
 <!-- Global resources -->
 {{ partialCached "head/resources.html" . }}
-<!-- Heavy libraries -->
+<!-- Libraries -->
 {{ if .Params.renderMath }}
   {{ partialCached "js/math.html" . }}
 {{ end }}

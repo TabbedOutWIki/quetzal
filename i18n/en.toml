@@ -25,6 +25,22 @@ other = "Light"
 [theme_text_dark]
 other = "Dark"
 
+# Alerts
+[note]
+other = "Note"
+
+[tip]
+other = "Tip"
+
+[important]
+other = "Important"
+
+[warning]
+other = "Warning"
+
+[caution]
+other = "Caution"
+
 # Common UI
 [ui_search]
 other = "Search"
@@ -33,10 +49,7 @@ other = "Search"
 other = "Search the wiki..."
 
 [ui_search_placeholder]
-other = "Type / to search"
-
-[ui_return_home]
-other = "Return home"
+other = "Press / to search"
 
 # Homepage
 [home_intro]

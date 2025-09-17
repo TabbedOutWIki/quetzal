@@ -5,7 +5,6 @@ hr {
 
 /* Pre / code */
 code {
-  color: var(--tx-primary);
   background-color: var(--bg-item);
   border: 1px solid var(--border-item);
   border-radius: var(--border-radius);
@@ -20,12 +19,6 @@ kbd {
   box-shadow: 0 1px 1px #ccc inset, 0 3px 0 0 #999;
   border-radius: var(--border-radius);
 }
-
-/* Quotes - temporarily disabled, experimenting with this look
-blockquote {
-  border-left-style: solid;
-  border-left-color: var(--border-item);
-} */
 
 blockquote::before {
   color: var(--tx-subtle);
@@ -101,15 +94,15 @@ details ul {
 /* Text Input Search */
 input[type="search"] {
   color: var(--tx-primary);
-  border-color: var(--border-interactive);
-  border-style: solid;
+  background-color: var(--bg-interactive);
   border-radius: 25px;
-  background: none;
   outline: none;
+  border: none;
 }
 
 input[type="search"]:focus {
-  border-color: var(--accent);
+  background-color: var(--bg-selected);
+  border-radius: 0;
 }
 
 input[type="search"]::placeholder {
@@ -134,6 +127,10 @@ option {
 option:hover,
 option:focus {
   background: var(--bg-hover);
+}
+
+option:checked {
+  background: var(--bg-selected);
 }
 
 option:checked .option-label {
@@ -196,7 +193,7 @@ select:open::picker-icon {
 
 /* Links */
 a {
-  color: var(--tx-primary);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -210,13 +207,8 @@ a.current {
   cursor: default;
 }
 
-.content a:not([class]) {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.content a:not([class]):hover {
-  text-decoration: none;
+a[class] {
+  color: var(--tx-primary);
 }
 
 /* Buttons */

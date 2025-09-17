@@ -11,6 +11,7 @@ body {
 /* Top nav */
 .top-nav {
   background: var(--bg-navigation);
+  z-index: var(--z-nav);
 }
 
 /* Article */
@@ -48,15 +49,27 @@ body {
 }
 
 /* Breadcrumbs */
-.breadcrumb-item a {
+.breadcrumb-item {
   color: var(--tx-subtle);
+}
+
+.breadcrumb-item a,
+.breadcrumb-item a.current {
+  color: inherit;
 }
 
 /* Footer */
 .footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: var(--fxs);
   background-color: var(--bg-footer);
   padding: var(--gutter);
+}
+
+.footer-wrapper a {
+  color: var(--accent-outer);
 }
 
 /* Section */

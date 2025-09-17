@@ -1,18 +1,3 @@
-/* Alert */
-.alert-container {
-  display: flex;
-  background: var(--bg-alert-info);
-  border-left: 4px solid var(--border-alert-info);
-  padding-left: 0.75rem;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-.alert-container.warn {
-  border-color: var(--border-alert-warn);
-  background: var(--bg-alert-warn);
-}
-
 /* YouTube */
 .yt-thumbnail {
   position: relative;

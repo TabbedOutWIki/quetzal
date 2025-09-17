@@ -7,8 +7,8 @@
 </head>
 <body>
   {{ partial "core/top-nav.html" . }}
-  {{ partialCached "core/site-notice.html" . }}
   {{ block "main" . }}{{ end }}
   {{ partialCached "core/footer.html" . }}
+  {{ block "libraries" . }}{{ end }}
 </body>
 </html>

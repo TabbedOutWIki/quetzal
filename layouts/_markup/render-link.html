@@ -1,13 +1,14 @@
 {{- $parsed := urls.Parse .Destination -}}
-{{- $whitelist := slice "tabbedout.wiki" "www.tabbedout.wiki" -}}
 <a
-  {{ if $parsed.IsAbs }}
-    {{- if in $whitelist $parsed.Host -}}
+  {{ if and ($parsed.IsAbs) (eq $parsed.Scheme "https") }}
+    {{- if findRE `^([a-z0-9-]+\.)?(tabbedout\.wiki|wikipedia\.org|toolkits\.gg)$` $parsed.Hostname -}}
       href="{{ .Destination | safeURL }}"
       rel="external"
+      target="_blank"
     {{- else -}}
-      href="#"
-      title="Blocked Link"
+      href="{{ site.Params.DocURL }}/{{ site.Language.Lang }}/request-whitelist"
+      title="Non-whitelisted link"
+      target="_blank"
     {{- end -}}
   {{ else }}
     href="{{ .Destination | relLangURL }}"

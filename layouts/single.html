@@ -3,20 +3,7 @@
   <div class="shell category-article">
     {{ partial "core/asides.html" . }}
     <main class="main-content">
-      <nav aria-label="Breadcrumb">
-        <ol class="breadcrumb-list" aria-label="Breadcrumbs">
-            {{- range .Ancestors.Reverse }}
-              <li class="breadcrumb-item">
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-                <!--<meta itemprop="position" content="">-->
-              </li>
-            {{- end }}
-            <li class="breadcrumb-item">
-              <a class="current" aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-              <!--<meta itemprop="position" content="">-->
-            </li>
-        </ol>
-      </nav>
+      {{ partial "components/breadcrumbs.html" . }}
       <article class="content">
         <div class="content-upper">
           <header>
@@ -38,4 +25,8 @@
     </main>
   </div>
 </div>
+{{ end }}
+{{ define "libraries" }}
+  {{- $tooltips := resources.Get "lib/tooltips.js" | minify -}}
+  <script src="{{ $tooltips.RelPermalink }}"></script>
 {{ end }}

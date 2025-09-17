@@ -2,11 +2,16 @@
 <div class="page-wrapper">
   <div class="shell category-article">
     <main class="main-content">
+      {{ partial "components/breadcrumbs.html" . }}
       <article class="content">
         <div class="content-upper">
           <header><h1 id="#content" class="content-title"><a href="#content">{{ .Title }}</a></h1></header>
           <ul class="page-tools">
-            <li class="page-tool"><a class="button" href="https://github.com" target="_blank" rel="external">{{ i18n "edit" }}</a></li>
+            {{- with .Site.Params.repository }}
+              {{- $path := page.File.Path }}
+              {{- $href := printf .Site.Params.repository.editPattern $path | urls.JoinPath }}
+              <li class="page-tool"><a class="button" href="{{ $href }}" target="_blank" rel="external">{{ i18n "edit" }}</a></li>
+            {{- end }}
           </ul>
         </div>
         <div class="content-body">
@@ -15,7 +20,7 @@
             {{ range .Pages }}
               {{ if .IsSection}}
                 <a href="{{ .RelPermalink }}" class="grid-item">
-                  <img src="/placeholder/section-icon.svg" alt="" width="128" height="128">
+                  <img src="" alt="" width="128" height="128">
                   <div><strong>{{ .LinkTitle }}</strong></div>
                 </a>
               {{ end }}
@@ -25,7 +30,7 @@
             {{ range .Pages }}
               {{ if .IsPage }}
               <a href="{{ .RelPermalink }}" class="grid-bar">
-                <img src="/placeholder/page-icon.svg" alt="" width="64" height="64">
+                <img src="" alt="" width="64" height="64">
                 <div>{{ .LinkTitle }}</div>
               </a>
               {{ end }}

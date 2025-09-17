@@ -1,4 +1,4 @@
-{{- $videoID := .Get "id" | htmlEscape | safeURL -}}
+{{- $videoID := .Get "id" | safeHTML | safeURL -}}
 {{- $startTime := .Get "start" -}}
 {{- $validID := findRE "^[\\w-]{11}$" $videoID -}}
 {{- if gt (len $validID) 0 -}}
