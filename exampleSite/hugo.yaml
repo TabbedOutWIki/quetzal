@@ -1,0 +1,122 @@
+# ============================= Site specific =============================
+baseURL: 'https://localhost:1313'
+
+languages:
+  en:
+    languageName: English
+    languageCode: en
+    languageDirection: ltr
+    contentDir: content/en
+    title: 'Development'
+    weight: 1
+  es:
+    languageName: Español
+    languageCode: es
+    languageDirection: ltr
+    contentDir: content/es
+    title: 'Desarrollo'
+    weight: 2
+  fr:
+    languageName: Français
+    languageCode: fr
+    languageDirection: ltr
+    contentDir: content/fr
+    title: 'Développement'
+    weight: 3
+
+taxonomies:
+  category: 'categories'
+  tag: 'tags'
+
+# Git
+repository:
+  branch: main
+  service: GitHub
+  owner: TabbedOutWiki
+  repo: tabbedout-main
+  editPattern: 'https://github.com/TabbedOutWiki/quetzal/edit/main/exampleSite/content/%s'
+  viewPattern: 'https://github.com/TabbedOutWiki/quetzal/blob/main/exampleSite/content/%s'
+enableGitInfo: true
+
+# ========================== DO NOT TOUCH BELOW ==========================
+docURL: 'https://tabbedout.wiki/'
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+pluralizeListTitles: false
+enableRobotsTXT: true
+sitemap:
+  changeFreq: daily
+
+outPutFormats:
+  json:
+    mediaType: 'application/json'
+    baseName: 'index'
+    isPlainText: true
+
+outputs:
+  home:
+    - 'html'
+  section:
+    - 'html'
+    - 'json'
+  taxonomy:
+    - 'html'
+  term:
+    - 'html'
+services:
+  rss:
+    limit: 42
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+    respectDoNotTrack: true
+  instagram:
+    disable: true
+    simple: true
+  vimeo:
+    disable: true
+    enableDNT: true
+    simple: true
+  x:
+    disable: true
+    enableDNT: true
+    simple: true
+  youTube:
+    disable: true
+    privacyEnhanced: true
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+    renderer:
+      unsafe: false
+      xhtml: false
+      hardWraps: false
+    extensions:
+      linkify: false
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          inline:
+          - - \(
+            - \)
+          enable: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
+
+module:
+  workspace: hugo.work
+  noVendor: "**"
+  imports:
+    path: 'github.com/TabbedOutWiki/quetzal'
