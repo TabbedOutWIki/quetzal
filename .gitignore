@@ -1,4 +1,4 @@
-content/
+/content
 
 # Builds
 public/
@@ -27,8 +27,7 @@ coverage.*
 *.coverprofile
 profile.cov
 
-# Go workspace file
-go.work
+# Sum files
 go.work.sum
 
 # Git backup files

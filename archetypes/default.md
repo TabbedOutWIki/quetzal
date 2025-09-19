@@ -4,10 +4,10 @@ translationKey: '{{ lower .File.ContentBaseName }}'
 
 # ========================================================
 # Search engine / page tab title
-title: '{{ title .File.ContentBaseName }}'
+title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 
 # Search engine description (1 - 2 sentences)
-description:
+description: ''
 
 # ========================================================
 # Page content - Uncomment tabs only if using multiple infoboxes
