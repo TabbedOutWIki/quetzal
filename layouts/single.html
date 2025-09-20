@@ -26,6 +26,10 @@
   </div>
 </div>
 {{ end }}
+{{ define "scoped" }}
+  {{- $scopedCSS := resources.Get "css/single.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $scopedCSS.RelPermalink }}">
+{{ end }}
 {{ define "libraries" }}
   {{- $tooltips := resources.Get "lib/tooltips.js" | minify -}}
   <script src="{{ $tooltips.RelPermalink }}"></script>
