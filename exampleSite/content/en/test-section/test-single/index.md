@@ -1,6 +1,6 @@
 ---
-translationKey: 'single'
-title: 'Single'
+translationKey: 'test-single'
+title: 'Test Single'
 description: 'Page single'
 ---
 

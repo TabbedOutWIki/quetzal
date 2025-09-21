@@ -1,0 +1,17 @@
+---
+translationKey: "priority"
+title: "Priority"
+description: "Important things to do leading to Quetzal's first test release"
+---
+
+Here is a list of stuff to do
+
+* Install and run Pagefind in builds ([1](https://pagefind.app/docs/installation/), [2](https://www.npmjs.com/package/pagefind), [3](https://baty.net/posts/2025/01/adding-pagefind-search-to-hugo/))
+* Configure a [hugo mod npm pack](https://gohugo.io/commands/hugo_mod_npm_pack/)
+* Add some [front matter](https://gohugo.io/configuration/front-matter/) configuration options
+* Add [pagination](https://gohugo.io/templates/pagination/) to home, section, taxonomy, and terms
+* Add ticket and report methods (suggest edit, report issue, devs contact to have content stalled or removed, legal contact)
+* Fix recent changes to work properly
+* Footer social / community links
+* Make sidebars sticky
+* Fix tabbed infoboxes

@@ -417,10 +417,10 @@ button, .button {
     grid-area: utils;
   }
 
-  .sidebar-container {
+  /* Sticky sidebar */
+  .sidebar-container .utils,
+  .sidebar-container .sidebar {
     --offset: calc(var(--site-header-height) + 1rem);
-    display: flex;
-    flex-direction: column;
     position: sticky;
     max-height: calc(100vh - var(--offset));
     top: var(--offset);

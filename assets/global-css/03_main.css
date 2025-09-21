@@ -14,7 +14,7 @@ body {
   z-index: var(--z-nav);
 }
 
-/* Article */
+/* Content */
 .content {
   background: var(--bg-content);
   border-radius: var(--border-radius);
@@ -70,27 +70,4 @@ body {
 
 .footer-wrapper a {
   color: var(--accent-outer);
-}
-
-/* Section */
-.section-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.page-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.grid-bar {
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--border-item);
-  gap: 1rem;
-}
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
